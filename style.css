@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #141414;
+}
+
+
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  padding: 20px;
+  background-color: #dddada;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Optional: limit max width for larger screens */
+  margin: 0 auto; /* Center the container */
+}
+
+.book {
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Default: 3 items per row on larger screens */
+.book {
+  width: calc(30% - 20px); /* 3 items per row */
+}
+
+.book:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.book img {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+}
+
+.book-title {
+  font-weight: 600;
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.book-author {
+  font-weight: 400;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .book {
+    width: calc(50% - 20px); /* 2 items per row on tablets */
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-img {
+    width: 90% !important;
+    height: 200px !important;
+    border-radius: 90px !important;
+  }
+  
+  .book-title { 
+    font-size: 14px;
+    font-weight: 100;
+  }
+
+  .book {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+  }
+
+  .button-book{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 8px;
+    text-decoration: none; /* remove underline */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+}
+
+
+.button-book {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none; /* remove underline */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-book:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
